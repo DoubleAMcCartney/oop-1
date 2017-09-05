@@ -1,19 +1,8 @@
 //Simulation of War card game
 
 #include <iostream>
+#include card.hpp
 
-enum suits {diamond, heart, club, spade};
-
-class card {
-	public:
-		card(int, suits); //rank, suit
-		int getRank();
-		suits getSuit();
-	protected:
-		int rank;
-		suits suit;
-	
-};
 
 //create card
 card::card(int r, suits s){
