@@ -1,17 +1,24 @@
 #pragma once
 
-enum suits { diamond, heart, club, spade };
+#include <utility>
 
-enum Rank {	Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King };
+enum Suit { diamond, heart, club, spade };
+enum Rank { Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King };
 
-class card {
+class Card {
 public:
-	card(int, suits); //rank, suit
+	Card() = default;
+	Card(Rank r, Suit s)
+		: rank(r), suit(s)
+	{}
+
 	int getRank();
-	suits getSuit();
+
+	Suit getSuit();
 
 protected:
-	int rank;
-	suits suit;
+	Rank rank;
+	Suit suit;
 
 };
+

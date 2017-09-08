@@ -1,29 +1,32 @@
 //Simulation of War card game
 
 #include <iostream>
-#include card.hpp
+#include <vector>
+#include "card.hpp"
 
 
-//create card
-card::card(int r, suits s){
-	rank = r;
-	suits = s;
-}
 
-class deck {
+
+class Deck {
 	public:
+		Deck();
 		void shuffle();
-		card deal();
+		Card deal();
 	protected:
-		card deck[52];
+		Card deck[52];
 };
 
-class player {
+class Player {
 
 };
 
-int main{
-	
+int main(){
+	std::vector<Card> cards(52);
+	int i = 0;
+	for (Rank r = Ace; r <= King; static_cast<Rank>(static_cast<int>(r) + 1)) {
+	  for (Suit s = heart; s <= spade; static_cast<Suit>(static_cast<int>(s) + 1))
+	    cards[i++] = Card {r, s};
+	}
 
 	return 0;
 }
