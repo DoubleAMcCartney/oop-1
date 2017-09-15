@@ -14,8 +14,9 @@ class Player {
 };
 
 int main(){
-	Deck deck;
-	deck.shuffle();
+	Deck theDeck;
+	theDeck.shuffle();
+	theDeck.deal();
 
 	return 0;
 }
