@@ -11,14 +11,18 @@ public:
 	Card(Rank r, Suit s)
 		: rank(r), suit(s)
 	{}
-
-	int getRank();
-
+	Rank getRank();
 	Suit getSuit();
 
-protected:
+private:
 	Rank rank;
 	Suit suit;
-
 };
 
+Rank Card::getRank() {
+	return rank;
+}
+
+Suit Card::getSuit() {
+	return suit;
+}
