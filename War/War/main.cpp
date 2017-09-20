@@ -5,18 +5,17 @@
 #include <string>
 #include "card.hpp"
 #include "deck.hpp"
+#include "player.hpp"
 
-
-
-
-class Player {
-
-};
 
 int main(){
 	Deck theDeck;
+	theDeck.showDeck();
+	std::cout << '\n';
 	theDeck.shuffle();
-	theDeck.deal();
+	theDeck.showDeck();
+
+	std::cin.get();
 
 	return 0;
 }

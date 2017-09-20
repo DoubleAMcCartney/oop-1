@@ -1,32 +1,36 @@
 #pragma once
 
 #include <utility>
+#include <iomanip>
 #include <random>
 #include <chrono>
 #include <algorithm>
+#include "card.hpp"
 
 class Deck {
 public:
 	Deck();
 
 	void shuffle();
-	void deal();
+	void showDeck();
 
 private:
 	std::vector<Card> deck;
 };
 
 Deck::Deck() {
-	int i = 0;
-	for (Rank r = Ace; r <= King; static_cast<Rank>(static_cast<int>(r) + 1)) {
-		for (Suit s = Heart; s <= Spade; static_cast<Suit>(static_cast<int>(s) + 1))
-			deck[i++] = Card{ r, s };
+	deck.reserve(52);
+	for (int r = Ace; r <= King; ++r) {
+		for (int s = Diamond; s <= Spade; ++s) {
+			Card c{ static_cast<Rank>(r), static_cast<Suit>(s) };
+			deck.push_back(c);
+		};
 	};
 }
 
-void Deck::deal() {
+void Deck::showDeck() {
 	for (int i = 0; i < 52; i++) {
-		std::cout << deck[i];
+		std::cout << deck[i] << '\n';
 	};
 }
 

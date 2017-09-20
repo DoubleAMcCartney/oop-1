@@ -2,8 +2,8 @@
 
 #include <utility>
 
-enum Suit { Diamond, Heart, Club, Spade };
-enum Rank { Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King };
+enum Suit { Diamond = 1, Heart, Club, Spade };
+enum Rank { Ace = 1, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King };
 
 class Card {
 public:
