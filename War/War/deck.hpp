@@ -11,9 +11,10 @@ public:
 	Deck();
 
 	void shuffle();
-	void showDeck();
-	void addCard(Card);
-	Card getCard();
+	void printDeck();
+	void takeCard(Card);
+	Card giveCard();
+	bool isEmpty();
 
 private:
 	std::vector<Card> deck;
@@ -29,17 +30,17 @@ Deck::Deck() {
 	};
 }
 
-void Deck::showDeck() {
+void Deck::printDeck() {
 	for (int i = 0; i < 52; i++) {
 		std::cout << deck[i] << '\n';
 	};
 }
 
-void Deck::addCard(Card c) {
+void Deck::takeCard(Card c) {
 	deck.push_back(c);
 }
 
-Card Deck::getCard() {
+Card Deck::giveCard() {
 	Card c = deck.back();
 	deck.pop_back();
 	return c;
@@ -48,4 +49,13 @@ Card Deck::getCard() {
 void Deck::shuffle() {
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 	std::shuffle(deck.begin(), deck.end(), std::default_random_engine(seed));
+}
+
+bool Deck::isEmpty() {
+	if (deck.size() == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }

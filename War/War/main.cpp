@@ -8,12 +8,23 @@
 #include "player.hpp"
 
 
-int main(){
+int main() {
 	Deck theDeck;
-	theDeck.showDeck();
-	std::cout << '\n';
 	theDeck.shuffle();
-	theDeck.showDeck();
+
+	Player p1;
+	Player p2;
+
+	//while the deck is !empty, deal to p1 and p2
+	while (!theDeck.isEmpty) {
+		p1.giveCard(theDeck.getCard);
+		p2.giveCard(theDeck.getCard);
+	}
+
+	//Each player plays a card
+	//check for war
+	//check for winner of round
+	//check for empty hand / end of game
 
 	std::cin.get();
 

@@ -4,11 +4,16 @@ class Player {
 public:
 	Player() = default;
 	Card playCard();
+	void giveCard(Card);
 
 private:
 	Deck hand;
 };
 
 Card Player::playCard() {
-	return hand.getCard();
+	return hand.giveCard();
+}
+
+void Player::giveCard(Card c) {
+
 }
