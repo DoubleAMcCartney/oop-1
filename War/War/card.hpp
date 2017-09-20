@@ -96,3 +96,18 @@ std::ostream& operator<<(std::ostream& os, Card c)
 {
 	return os << c.getRank() << c.getSuit();
 }
+
+bool operator<(Card a, Card b)
+{
+	return a.getRank() < b.getRank();
+}
+
+bool operator>(Card a, Card b)
+{
+	return a.getRank() > b.getRank();
+}
+
+bool operator==(Card a, Card b)
+{
+	return a.getRank() == b.getRank();
+}
