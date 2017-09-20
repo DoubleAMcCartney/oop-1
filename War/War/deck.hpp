@@ -5,7 +5,6 @@
 #include <random>
 #include <chrono>
 #include <algorithm>
-#include "card.hpp"
 
 class Deck {
 public:
@@ -13,6 +12,8 @@ public:
 
 	void shuffle();
 	void showDeck();
+	void addCard(Card);
+	Card getCard();
 
 private:
 	std::vector<Card> deck;
@@ -32,6 +33,16 @@ void Deck::showDeck() {
 	for (int i = 0; i < 52; i++) {
 		std::cout << deck[i] << '\n';
 	};
+}
+
+void Deck::addCard(Card c) {
+	deck.push_back(c);
+}
+
+Card Deck::getCard() {
+	Card c = deck.back();
+	deck.pop_back();
+	return c;
 }
 
 void Deck::shuffle() {
