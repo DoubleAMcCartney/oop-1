@@ -14,8 +14,12 @@ public:
 	void shuffle();
 	void printDeck();
 	void takeCard(Card);
+	void takeDeck(Deck*);
+	void empty();
 	Card giveCard();
 	bool isEmpty();
+	std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Card>>> getBegin();
+	std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Card>>> getEnd();
 
 private:
 	std::vector<Card> deck;
@@ -44,6 +48,14 @@ void Deck::takeCard(Card c) {
 	deck.push_back(c);
 }
 
+void Deck::takeDeck(Deck *d) {
+	deck.insert(deck.end(), d->getBegin(), d->getEnd());
+}
+
+void Deck::empty() {
+	deck.clear();
+}
+
 Card Deck::giveCard() {
 	Card c = deck.back();
 	deck.pop_back();
@@ -62,4 +74,12 @@ bool Deck::isEmpty() {
 	else {
 		return false;
 	}
+}
+
+std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Card>>> Deck::getBegin() {
+	return deck.begin();
+}
+
+std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Card>>> Deck::getEnd() {
+	return deck.end();
 }

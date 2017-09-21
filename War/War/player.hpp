@@ -5,6 +5,7 @@ public:
 	Player() = default;
 	Card playCard();
 	void takeCard(Card);
+	void takeDeck(Deck*);
 	bool lost();
 
 private:
@@ -17,6 +18,11 @@ Card Player::playCard() {
 
 void Player::takeCard(Card c) {
 	hand.takeCard(c);
+}
+
+void Player::takeDeck(Deck *d) {
+	hand.takeDeck(d);
+	d->empty();
 }
 
 bool Player::lost() {
