@@ -10,6 +10,7 @@ class Deck {
 public:
 	Deck();
 
+	void makeStandardDeck();
 	void shuffle();
 	void printDeck();
 	void takeCard(Card);
@@ -20,14 +21,17 @@ private:
 	std::vector<Card> deck;
 };
 
-Deck::Deck() {
-	deck.reserve(52);
+void Deck::makeStandardDeck() {
 	for (int r = Ace; r <= King; ++r) {
 		for (int s = Diamond; s <= Spade; ++s) {
 			Card c{ static_cast<Rank>(r), static_cast<Suit>(s) };
 			deck.push_back(c);
 		};
 	};
+}
+
+Deck::Deck() {
+	deck.reserve(52);
 }
 
 void Deck::printDeck() {
