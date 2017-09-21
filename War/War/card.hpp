@@ -11,21 +11,13 @@ public:
 	Card(Rank r, Suit s)
 		: rank(r), suit(s)
 	{}
-	Rank getRank();
-	Suit getSuit();
+	Rank getRank() const { return rank; };
+	Suit getSuit() const { return suit; };
 
 private:
 	Rank rank;
 	Suit suit;
 };
-
-Rank Card::getRank() {
-	return rank;
-}
-
-Suit Card::getSuit() {
-	return suit;
-}
 
 std::ostream& operator<<(std::ostream& os, Rank r)
 {
