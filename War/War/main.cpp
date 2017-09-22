@@ -82,7 +82,6 @@ int main() {
 		}
 	}
 
-	std::cin.get();
-
+	std::cin.get(); //prevents window from closing
 	return 0;
 }
