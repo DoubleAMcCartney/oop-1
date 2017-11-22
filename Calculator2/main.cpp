@@ -9,12 +9,12 @@ std::ostream& operator<<(std::ostream& os, const Expr* e)
 
 int main() {
 
-	// 8 * (9 + 6)
+	// 8 * (9 + 7)
 	Expr* e = new Mul(
 		new Int(8),
 		new Add(
 			new Int(9),
-			new Int(6)
+			new Int(7)
 		)
 	);
 
